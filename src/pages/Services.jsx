@@ -12,9 +12,9 @@ import engineer from "../media/svg/engineer.svg";
 const ServiceContainer = styled.section`
   height: 120vh;
   padding: 32px;
-  margin: 32px;
+  margin: 0px 32px;
   @media screen and (max-width: 768px) {
-    height: 350vh;
+    height: calc(100vh - 100%);
   }
 `;
 

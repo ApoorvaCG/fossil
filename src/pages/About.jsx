@@ -7,13 +7,15 @@ import { deviceSizes } from "../scripts/constants";
 const AboutDiv = styled.div`
   height: 110vh;
   background-color: #fdfdfd;
+  padding: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   @media ${deviceSizes.mobileS} {
-    min-height: 150vh;
-    max-height: 190vh;
+    height: calc(100vh - 110%);
   }
+`;
+/* 
   @media ${deviceSizes.tablet} {
     min-height: 70vh;
     max-height: 100vh;
@@ -22,9 +24,9 @@ const AboutDiv = styled.div`
     min-height: 70vh;
     max-height: 100vh;
   }
-`;
+*/
 const AboutSection = styled.section`
-  margin: 0px 5px 20px 5px;
+  margin: 2rem 1rem 2rem 1rem;
   padding: 24px;
   @media ${deviceSizes.mobileS} {
     padding: 0px;
@@ -32,7 +34,7 @@ const AboutSection = styled.section`
 `;
 
 const AboutTitle = styled.h1`
-  padding: 16px;
+  padding: 1rem;
   font-family: "DM Sans", sans-serif;
   text-align: center;
   font-weight: 500;
@@ -87,12 +89,12 @@ const AboutImage = styled.div`
   }
   @media ${deviceSizes.tablet} {
     img {
-      width: 70%;
+      width: 30%;
     }
   }
   @media ${deviceSizes.laptop} {
     img {
-      width: 70%;
+      width: 30%;
     }
   }
 `;

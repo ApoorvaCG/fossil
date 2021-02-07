@@ -17,9 +17,10 @@ const ProcessContainer = styled.section`
   justify-content: center;
   align-items: center;
   @media ${deviceSizes.mobileS} {
-    min-height: 360vh;
-    max-height: 400vh;
+    height: calc(100vh - 100%);
   }
+`;
+/* 
   @media ${deviceSizes.mobileM} {
     min-height: 280vh;
     max-height: 300vh;
@@ -34,9 +35,7 @@ const ProcessContainer = styled.section`
   @media ${deviceSizes.laptop} {
     min-height: 80vh;
     max-height: 100vh;
-  }
-`;
-
+  } */
 const ProcessSection = styled.section``;
 
 const Title = styled.h1`
