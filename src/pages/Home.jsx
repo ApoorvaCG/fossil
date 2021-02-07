@@ -71,7 +71,7 @@ const Title = styled.div`
 const Home = () => {
   return (
     <div id="home" style={{ padding: "15px" }}>
-      <Container style={{ height: `calc(100vh - 70px)` }}>
+      <Container>
         <HeroSection>
           <TitleBox>
             <Title>
