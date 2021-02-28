@@ -1,21 +1,22 @@
 import { Container, Box } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
-import coffeeBreak from "../media/svg/coffeeBreak.svg";
+import coffeeBreak from "../media/svg/think.gif";
 import { deviceSizes } from "../scripts/constants";
 
 const AboutDiv = styled.div`
-  height: 110vh;
-  background-color: #fdfdfd;
-  padding: 32px;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   @media ${deviceSizes.mobileS} {
-    height: calc(100vh - 110%);
+    height: calc(100vh - 120%);
   }
 `;
 /* 
+  background-color: #fdfdfd;
+
   @media ${deviceSizes.tablet} {
     min-height: 70vh;
     max-height: 100vh;
@@ -41,31 +42,32 @@ const AboutTitle = styled.h1`
   line-height: 1;
   letter-spacing: -0.025em;
   font-size: clamp(2rem, 8vw, 4rem);
+  text-transform: capitalize;
 `;
 
 const AboutText = styled.p`
   margin: 8px 20px;
   padding-top: 8px;
-  font-size: 16px;
+  font-size: 20px;
   font-family: "DM Sans", sans-serif;
   text-align: left;
   font-weight: 400;
-  justify-content: center;
-  align-items: center;
+  line-height: 1.6em;
+  letter-spacing: 0.01em;
   display: flex;
+  align-items: center;
   @media ${deviceSizes.mobileS} {
     text-align: center;
   }
   @media ${deviceSizes.laptop} {
-    text-align: center;
+    text-align: left;
   }
 `;
 const AboutWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 20px;
-  @media (max-width: 1000px) {
-  }
+
   @media ${deviceSizes.mobileS} {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 40px;
@@ -75,7 +77,7 @@ const AboutWrapper = styled.div`
     grid-gap: 20px;
   }
   @media ${deviceSizes.laptop} {
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     grid-gap: 20px;
   }
 `;
@@ -94,7 +96,7 @@ const AboutImage = styled.div`
   }
   @media ${deviceSizes.laptop} {
     img {
-      width: 30%;
+      width: 70%;
     }
   }
 `;
@@ -107,7 +109,12 @@ const About = () => {
           <Box mb={5} />
           <AboutWrapper>
             <AboutImage>
-              <img src={coffeeBreak} alt="about-us" />
+              <img
+                src={coffeeBreak}
+                alt="about-us"
+                width="200px"
+                height="200px"
+              />
             </AboutImage>
             <AboutText>
               We believe that interior designing is all about imaginative &

@@ -4,7 +4,8 @@ import { NavLink, Link } from "react-router-dom";
 import { CgMenuRightAlt } from "react-icons/cg";
 import logo from "../../media/images/logo.png";
 import SideBar from "./SideBar";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaWhatsappSquare } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 // import { Link } from 'react-scroll';
 
@@ -24,18 +25,24 @@ const MediaLinkSection = styled.div`
   }
 `;
 
-const MediaLink = styled(Link)`
+const MediaLink = styled.a`
   padding: 4px;
 `;
 
 const SocialMediaLinks = () => {
   return (
     <MediaLinkSection>
-      <MediaLink to="https://ui8-collab.herokuapp.com/#" target="_blank">
+      <MediaLink href="https://facebook.com/fossilinteriors" target="_blank">
         <FaFacebook size={30} color="#4267B2" />
       </MediaLink>
-      <MediaLink to="https://www.instagram.com/" target="_blank">
+      <MediaLink
+        href="https://www.instagram.com/fossilinteriors?igshid=dy89m4glhm1s"
+        target="_blank"
+      >
         <AiFillInstagram size={30} color="#DD2A7B" />
+      </MediaLink>
+      <MediaLink href="https://wa.me/message/2LGJ63MFXDGGD1" target="_blank">
+        <IoLogoWhatsapp size={30} color="#62D256" />
       </MediaLink>
     </MediaLinkSection>
   );

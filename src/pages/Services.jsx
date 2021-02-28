@@ -1,13 +1,20 @@
-import { Container, Typography, Avatar, Box } from "@material-ui/core";
+import { Container, Typography, Box } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import Grid from "@material-ui/core/Grid";
-import bookshelf from "../media/svg/studying.svg";
-import livingRoom from "../media/svg/livingRoom.svg";
-import underConstruction from "../media/svg/underConstruction.svg";
-import chef from "../media/svg/chef.svg";
-import idea from "../media/svg/idea.svg";
-import engineer from "../media/svg/engineer.svg";
+import bookshelf from "../media/svg/studyingNew.svg";
+import livingRoomBG from "../media/svg/livingRoomtv.svg";
+import bathRoomBG from "../media/svg/bathroom.svg";
+import entertainmentBG from "../media/svg/movie.svg";
+import planBG from "../media/svg/plan1.svg";
+import plan from "../media/svg/plan.svg";
+import kitchen from "../media/svg/kitchen1.svg";
+import kitchenBG from "../media/svg/kitchen2.svg";
+import ideaBG from "../media/svg/idea1.svg";
+import dressroom1 from "../media/svg/dressroom1.svg";
+import dressroom2 from "../media/svg/dressroom2.svg";
+import bedroom1 from "../media/svg/bedroom.svg";
+import designService from "../media/svg/designService.svg";
 
 const ServiceContainer = styled.section`
   padding: 32px;
@@ -18,7 +25,6 @@ const ServiceContainer = styled.section`
 `;
 
 const ServicesSection = styled.section``;
-//  margin: 10px 5px;
 
 const Title = styled.h1`
   margin: 40px 16px;
@@ -28,17 +34,71 @@ const Title = styled.h1`
   line-height: 1;
   letter-spacing: -0.025em;
   font-size: clamp(2rem, 8vw, 4rem);
+  text-transform: capitalize;
 `;
 
-const Card = styled.div`
-  height: 300px;
-  width: 300px;
-  margin: 8px;
-  padding: 20px;
-  border-radius: 25px;
-  background: #fdfdfd;
-  box-shadow: -2px -2px 10px #f4eee1, 2px 2px 10px #babecc;
-`;
+const DisplayOver = styled.div({
+  height: "100%",
+  left: "0",
+  top: "0",
+  width: "100%",
+  zIndex: 2,
+  transition: "background-color 350ms ease",
+  backgroundColor: "transparent",
+  padding: "20px 20px 0 20px",
+  boxSizing: "border-box",
+
+  [`&:hover`]: {
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    borderRadius: "25px",
+    transform: "translate3d(0,1px,1px)",
+    transition: "transform 1s ease",
+    backgroundImage: (props) => {
+      return (
+        `url(${props.picture})` ||
+        `url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/interior-design-hbx030120raji-009-copy-1580424230.jpg')`
+      );
+    },
+  },
+});
+
+const CardBody = styled.div({
+  textAlign: "center",
+});
+
+const Hover = styled.div({
+  opacity: 0,
+  transition: "opacity 350ms ease",
+  transform: "translate3d(0,10px,0)",
+});
+
+const CardTitle = styled.div({
+  fontFamily: "Helvetica",
+  transform: "translate3d(0,10px,0)",
+  transition: "transform 350ms ease",
+});
+
+const Paragraph = styled.p({
+  transform: "translate3d(0,10px,0)",
+  transition: "transform 350ms ease",
+});
+
+const Card = styled.div({
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  position: "relative",
+  height: " 300px",
+  width: "300px",
+  transition: "background-color 350ms ease",
+  borderRadius: "25px",
+  background: "#fdfdfd",
+
+  [`:hover ${CardTitle}, :hover ${Paragraph}`]: {
+    transform: "translate3d(0,0,0)",
+    visibility: "hidden",
+  },
+});
 
 const Services = () => {
   return (
@@ -59,17 +119,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img
-                    alt="services"
-                    src={livingRoom}
-                    width="200px"
-                    height="100px"
-                  />
-                  <Typography variant="h5">Entertainment</Typography>
-                  <Box mb={2} />
-                  <p>A soothing design for your entertainment units</p>
-                </div>
+                <DisplayOver picture={livingRoomBG}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={entertainmentBG}
+                        width="200px"
+                        height="100px"
+                      />
+                      <Typography variant="h5">Entertainment Units</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        A soothing design for your entertainment units, TV Back
+                        panelling, Bookshelf
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
             <Grid
@@ -84,15 +152,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img alt="services" src={chef} width="200px" height="100px" />
-                  <Typography variant="h5">Kitchen</Typography>
-                  <Box mb={2} />
-                  <p>
-                    Modular kitchens,crockeries unit,Countertops, Backsplashes,
-                    Accessories, Shutters, Storage
-                  </p>
-                </div>
+                <DisplayOver picture={kitchenBG}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={kitchen}
+                        width="210px"
+                        height="110px"
+                      />
+                      <Typography variant="h5">Modular Kitchen</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        Modular kitchens, crockeries unit, Countertops,
+                        Backsplashes, Shutters, Storage
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
             <Grid
@@ -107,14 +185,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img alt="services" src={idea} width="200px" height="100px" />
-                  <Typography variant="h5">Idea</Typography> <Box mb={2} />
-                  <p>
-                    Janitor Unit, Skirting Drawer, Pantry Pull Out, Appliance
-                    Garage, Magic Corner,Study Unit
-                  </p>
-                </div>
+                <DisplayOver picture={ideaBG}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={bookshelf}
+                        width="200px"
+                        height="100px"
+                      />
+                      <Typography variant="h5">Creative Storages</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        Janitor Unit, Skirting Drawer, Pantry Pull Out,
+                        Appliance Garage, Magic Corner,Study Unit{" "}
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
             <Grid
@@ -129,17 +218,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img
-                    alt="services"
-                    src={underConstruction}
-                    width="200px"
-                    height="100px"
-                  />
-                  <Typography variant="h5">under construction</Typography>
-                  <Box mb={2} />
-                  <p>Complete/ maintaince of buildings</p>
-                </div>
+                <DisplayOver picture={planBG}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={designService}
+                        width="200px"
+                        height="100px"
+                      />
+                      <Typography variant="h5">Interior Designs</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        Furnishing, Wall Panelling, Fall Ceiling, Lighting
+                        decors, Accessories
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
             <Grid
@@ -154,20 +251,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img
-                    alt="services"
-                    src={engineer}
-                    width="200px"
-                    height="100px"
-                  />
-                  <Typography variant="h5">Engineer</Typography>
-                  <Box mb={2} />
-                  <p>
-                    Painting, Bathroom Remodelling, Tiling, Plumbing,
-                    Electrical, Civil Work, Deep Cleaning
-                  </p>
-                </div>
+                <DisplayOver picture={bathRoomBG}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={plan}
+                        width="200px"
+                        height="100px"
+                      />
+                      <Typography variant="h5">Building Services</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        Painting, Bathroom Remodelling, Tiling, Plumbing,
+                        Electrical, Civil Work, Deep Cleaning
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
             <Grid
@@ -182,20 +284,25 @@ const Services = () => {
               }}
             >
               <Card>
-                <div style={{ textAlign: "center" }}>
-                  <img
-                    alt="services"
-                    src={bookshelf}
-                    width="200px"
-                    height="100px"
-                  />
-                  <Typography variant="h5"> Space</Typography>
-                  <Box mb={2} />
-                  <p>
-                    Wardrobes, TV Unit, Bed with Storage, Dressing Unit, Hidden
-                    Bar Cabinet
-                  </p>
-                </div>
+                <DisplayOver picture={dressroom1}>
+                  <CardBody>
+                    <CardTitle>
+                      <img
+                        alt="services"
+                        src={bedroom1}
+                        width="200px"
+                        height="100px"
+                      />
+                      <Typography variant="h5">Living/Dining Room</Typography>
+                      <Box mb={2} />
+                      <Paragraph>
+                        Wardrobes, TV Unit, Bed with Storage, Dressing Unit,
+                        Hidden Bar Cabinet
+                      </Paragraph>
+                    </CardTitle>
+                  </CardBody>
+                  <Hover></Hover>
+                </DisplayOver>
               </Card>
             </Grid>
           </Grid>

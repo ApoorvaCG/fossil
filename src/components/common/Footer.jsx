@@ -4,6 +4,7 @@ import { FiInstagram, FiFacebook, FiYoutube, FiTwitter } from "react-icons/fi";
 import { Typography, Box } from "@material-ui/core";
 import logo from "../../media/images/FILogo.png";
 import { Link } from "react-scroll";
+import { FaWhatsapp } from "react-icons/fa";
 
 const FooterSection = styled.div`
   padding: 80px 60px 20px 60px;
@@ -39,8 +40,8 @@ const BrandLogo = styled(Link)`
   align-items: center;
 `;
 const BrandImage = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
 `;
 
@@ -80,111 +81,127 @@ const FooterColumn = styled.div`
 
 const Footer = () => {
   return (
-    <FooterSection id="footer">
-      <FooterWrapper>
-        <FooterRow>
-          <FooterColumn>
-            <BrandLogo to="/">
-              <BrandImage src={logo} alt="brand Logo" />
-            </BrandLogo>
-          </FooterColumn>
-          <FooterColumn>
-            <Typography
-              variant="body1"
-              style={{
-                fontWeight: 900,
-                borderBottom: "1px",
-                borderBottomStyle: "solid",
-              }}
-            >
-              COMPANY
-            </Typography>
-            <NavList>
-              <NavLinks to="home" spy={true} smooth={true} duration={1000}>
-                <Typography variant="body2">Home</Typography>
-              </NavLinks>
-              <NavLinks to="about" spy={true} smooth={true} duration={1000}>
-                <Typography variant="body2">About</Typography>
-              </NavLinks>
-              <NavLinks to="services" spy={true} smooth={true} duration={1000}>
-                <Typography variant="body2">Services</Typography>
-              </NavLinks>
-              <NavLinks
-                to="how-it-works"
-                spy={true}
-                smooth={true}
-                duration={1000}
+    <>
+      <FooterSection id="footer">
+        <FooterWrapper>
+          <FooterRow>
+            <FooterColumn>
+              <BrandLogo to="/">
+                <BrandImage src={logo} alt="brand Logo" />
+              </BrandLogo>
+            </FooterColumn>
+            <FooterColumn>
+              <Typography
+                variant="body1"
+                style={{
+                  fontWeight: 900,
+                  borderBottom: "1px",
+                  borderBottomStyle: "solid",
+                }}
               >
-                <Typography variant="body2">How it works</Typography>
-              </NavLinks>
-              <NavLinks
-                to="contact-us"
-                spy={true}
-                smooth={true}
-                duration={1000}
+                COMPANY
+              </Typography>
+              <NavList>
+                <NavLinks to="home" spy={true} smooth={true} duration={1000}>
+                  <Typography variant="body2">Home</Typography>
+                </NavLinks>
+                <NavLinks to="about" spy={true} smooth={true} duration={1000}>
+                  <Typography variant="body2">About</Typography>
+                </NavLinks>
+                <NavLinks
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
+                  <Typography variant="body2">Services</Typography>
+                </NavLinks>
+                <NavLinks
+                  to="how-it-works"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
+                  <Typography variant="body2">How it works</Typography>
+                </NavLinks>
+                <NavLinks
+                  to="contact-us"
+                  spy={true}
+                  smooth={true}
+                  duration={1000}
+                >
+                  <Typography variant="body2">Contact us</Typography>
+                </NavLinks>
+              </NavList>
+            </FooterColumn>
+            <FooterColumn>
+              <Typography
+                variant="body1"
+                style={{
+                  fontWeight: 900,
+                  borderBottom: "1px",
+                  borderBottomStyle: "solid",
+                }}
               >
-                <Typography variant="body2">Contact us</Typography>
-              </NavLinks>
-            </NavList>
-          </FooterColumn>
-          <FooterColumn>
-            <Typography
-              variant="body1"
-              style={{
-                fontWeight: 900,
-                borderBottom: "1px",
-                borderBottomStyle: "solid",
-              }}
-            >
-              CONNECT
+                CONNECT
+              </Typography>
+              <Box mb={2} />
+              <FooterLink
+                href="https://facebook.com/fossilinteriors"
+                target="_blank"
+              >
+                <Box display="flex">
+                  <FiFacebook color="#4267B2" />
+                  <Box mr={1} />
+                  <Typography variant="body2">on Facebook</Typography>
+                </Box>
+              </FooterLink>
+              <FooterLink
+                href="https://www.instagram.com/fossilinteriors?igshid=dy89m4glhm1s"
+                target="_blank"
+              >
+                <Box display="flex">
+                  <FiInstagram color="#DD2A7B" />
+                  <Box mr={1} />
+                  <Typography variant="body2">on Instagram</Typography>
+                </Box>
+              </FooterLink>
+              <FooterLink
+                href="https://wa.me/message/2LGJ63MFXDGGD1"
+                target="_blank"
+              >
+                <Box display="flex">
+                  <FaWhatsapp color="#62D256" />
+                  <Box mr={1} />
+                  <Typography variant="body2">on Whatsapp</Typography>
+                </Box>
+              </FooterLink>
+              {/* <FooterLink href="#">
+                <Box display="flex">
+                  <FiTwitter color="#00acee" />
+                  <Box mr={1} />
+                  <Typography variant="body2">on Twitter</Typography>
+                </Box>
+              </FooterLink> */}
+            </FooterColumn>
+          </FooterRow>
+          <Box
+            mt={2}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            flexDirection="column"
+          >
+            <Typography variant="subtitle2">
+              Copyright 2021 Fossil Interiors, All Rights Reserved
             </Typography>
-            <Box mb={2} />
             <FooterLink href="#">
-              <Box display="flex">
-                <FiFacebook color="#4267B2" />
-                <Box mr={1} />
-                <Typography variant="body2">on Facebook</Typography>
-              </Box>
+              <Typography variant="subtitle2">Privacy Policy</Typography>
             </FooterLink>
-            <FooterLink href="#">
-              <Box display="flex">
-                <FiInstagram color="#DD2A7B" />
-                <Box mr={1} />
-                <Typography variant="body2">on Instagram</Typography>
-              </Box>
-            </FooterLink>
-            <FooterLink href="#">
-              <Box display="flex">
-                <FiYoutube color="#FF0000" />
-                <Box mr={1} />
-                <Typography variant="body2">on YouTube</Typography>
-              </Box>
-            </FooterLink>
-            <FooterLink href="#">
-              <Box display="flex">
-                <FiTwitter color="#00acee" />
-                <Box mr={1} />
-                <Typography variant="body2">on Twitter</Typography>
-              </Box>
-            </FooterLink>
-          </FooterColumn>
-        </FooterRow>
-        <Box
-          mt={2}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
-        >
-          <Typography variant="subtitle2">
-            Copyright 2021 Fossil Interiors, All Rights Reserved
-          </Typography>
-          <FooterLink href="#">
-            <Typography variant="subtitle2">Privacy Policy</Typography>
-          </FooterLink>
-        </Box>
-      </FooterWrapper>
-    </FooterSection>
+          </Box>
+        </FooterWrapper>
+      </FooterSection>
+    </>
   );
 };
 
