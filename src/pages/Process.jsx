@@ -45,6 +45,7 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.025em;
+  text-transform: capitalize;
   font-size: clamp(2rem, 8vw, 4rem);
 `;
 
