@@ -147,7 +147,7 @@ const Slider = ({ sliderData }) => {
             >
               Adding Value To Your Property & All That You Dream
             </h2>
-            <Box display="flex">
+            <Box display="flex" my={2}>
               {/* <ButtonStyle
                 onClick={() => {
                   console.log("wertyu");

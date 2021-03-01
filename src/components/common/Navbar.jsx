@@ -64,12 +64,11 @@ const NavLinks = styled(Link)`
   &.active {
     border-bottom: 2px solid #c9aa6a;
   }
-`; //#343561 - blue
-// color: #1d1916;
+`;
 
 const MobileMenu = styled(CgMenuRightAlt)`
   display: none;
-
+  color: #fff;
   @media screen and (max-width: 768px) {
     display: block;
     cursor: pointer;
@@ -77,6 +76,7 @@ const MobileMenu = styled(CgMenuRightAlt)`
     padding-right: 8px;
     height: 38px;
     width: 38px;
+    font-weight: 900;
   }
 `;
 const SideBarClose = styled(MdClose)`
@@ -102,6 +102,9 @@ const Navbar = () => {
   const handleSideBa = () => {
     setShowMenu(!showMenu);
   };
+  const closeMenu = () => {
+    setShowMenu(!showMenu);
+  };
   const changeNavBackground = () => {
     if (window.scrollY >= 80) {
       setNavBarColor(true);
@@ -120,22 +123,19 @@ const Navbar = () => {
       </NavLeft>
       <NavRight>
         <NavList>
-          <NavLinks
-            activeClass="active"
-            to="home"
-            spy={true}
-            smooth={true}
-            duration={1000}
-          >
+          <NavLinks activeClass="active" to="home" spy={true} duration={1000}>
             Home
           </NavLinks>
-          <NavLinks to="about" spy={true} smooth={true} duration={1000}>
-            About
-          </NavLinks>
-          <NavLinks to="services" spy={true} smooth={true} duration={1000}>
+          <NavLinks to="services" spy={true}>
             Services
           </NavLinks>
-          <NavLinks to="contact-us" spy={true} smooth={true} duration={1000}>
+          <NavLinks to="how-it-works" spy={true}>
+            How it works
+          </NavLinks>
+          <NavLinks to="about" spy={true}>
+            About
+          </NavLinks>
+          <NavLinks to="contact-us" spy={true}>
             Contact us
           </NavLinks>
         </NavList>
@@ -144,7 +144,7 @@ const Navbar = () => {
         ) : (
           <Icon>
             <SideBarClose onClick={() => handleSideBa()} />
-            <SideBar />
+            <SideBar clsoeMenu={closeMenu} />
           </Icon>
         )}
       </NavRight>

@@ -55,13 +55,7 @@ const AboutText = styled.p`
   line-height: 1.6em;
   letter-spacing: 0.01em;
   display: flex;
-  align-items: center;
-  @media ${deviceSizes.mobileS} {
-    text-align: center;
-  }
-  @media ${deviceSizes.laptop} {
-    text-align: left;
-  }
+  text-align: left;
 `;
 const AboutWrapper = styled.div`
   display: grid;
