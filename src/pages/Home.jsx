@@ -13,7 +13,7 @@ const HeroSection = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 3.125rem;
-    height: calc(100vh - 15.625rem);
+    height: calc(100vh - 0rem);
   }
 `;
 
