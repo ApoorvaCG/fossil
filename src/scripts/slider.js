@@ -1,7 +1,7 @@
 import Image2 from "../media/images/image2.jpg";
 import Image4 from "../media/images/image4.jpg";
 import Image8 from "../media/images/image8.jpg";
-import Image7 from "../media/images/image7.jpg";
+import Image7 from "../media/images/image7_com.jpg";
 
 export const sliderData = [
   {
