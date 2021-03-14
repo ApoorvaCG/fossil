@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import { Box } from "@material-ui/core";
+import { deviceSizes } from "../../scripts/constants";
 
 const SliderSection = styled.section`
   height: inherit;
@@ -12,8 +13,8 @@ const SliderSection = styled.section`
 
 const ImageSlide = styled.div`
   z-index: 1;
-  width: 100%;
   position: absolute;
+  width: 100%;
   height: inherit;
 `;
 
@@ -27,6 +28,7 @@ const ImageSlider = styled.div`
   justify-content: center;
   position: relative;
 `;
+
 const slideIn = keyframes`
   from {
     opacity: 0;
@@ -36,9 +38,21 @@ const slideIn = keyframes`
   }
 `;
 const SlideImage = styled.img`
-  height: inherit;
-  width: 100%;
   animation: ${slideIn} 1s;
+  width: 100%;
+  max-height: 100vh;
+  height: auto;
+  object-position: center center;
+  object-fit: cover;
+  @media ${deviceSizes.mobileS} {
+    width: auto;
+  }
+  @media ${deviceSizes.tablet} {
+    width: auto;
+  }
+  @media ${deviceSizes.laptop} {
+    width: 100%;
+  }
 `;
 
 const InfoContainer = styled.div`

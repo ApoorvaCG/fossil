@@ -10,9 +10,6 @@ const HeroSection = styled.div`
   height: 100vh;
 
   @media screen and (max-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 3.125rem;
     height: calc(100vh - 0rem);
   }
 `;
