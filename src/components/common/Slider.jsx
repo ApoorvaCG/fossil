@@ -41,16 +41,19 @@ const SlideImage = styled.img`
   animation: ${slideIn} 1s;
   width: 100%;
   max-height: 100vh;
-  height: auto;
+  height: 100%;
   object-position: center center;
   object-fit: cover;
   @media ${deviceSizes.mobileS} {
+    height: 100%;
     width: auto;
   }
   @media ${deviceSizes.tablet} {
+    height: 100%;
     width: auto;
   }
   @media ${deviceSizes.laptop} {
+    height: 100%;
     width: 100%;
   }
 `;
@@ -78,11 +81,11 @@ const SlideContent = styled.div`
   flex-direction: column;
 
   h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     font-family: Julius Sans One, sans-serif;
     text-transform: capitalize;
     text-align: center;
-    font-weight: 300;
+    font-weight: 700;
   }
   p {
     margin-top: 8px;
@@ -150,8 +153,8 @@ const Slider = ({ sliderData }) => {
         })}
         <InfoContainer>
           <SlideContent>
-            <p>Fossil interiors</p>
-            <h1>Title</h1>
+            <p>Welcome to</p>
+            <h1>Fossil family</h1>
             <h2
               style={{
                 fontVariant: "small-caps",
@@ -159,7 +162,7 @@ const Slider = ({ sliderData }) => {
                 fontSize: `clamp(0.75rem, 3vw, 1.25rem)`,
               }}
             >
-              Adding Value To Your Property & All That You Dream
+              Adding Value To Your Property
             </h2>
             <Box display="flex" my={2}>
               {/* <ButtonStyle
