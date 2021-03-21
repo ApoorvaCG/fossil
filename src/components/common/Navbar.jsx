@@ -5,6 +5,7 @@ import logo from "../../media/images/logo.png";
 import SideBar from "./SideBar";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-scroll";
+import { deviceSizes } from "../../scripts/constants";
 
 const NavBarSection = styled.nav`
   display: flex;
@@ -39,6 +40,11 @@ const BrandImage = styled.img`
   object-fit: cover;
   margin-top: 10px;
   margin-left: 25px;
+
+  @media ${deviceSizes.laptop} {
+    width: 78px;
+    height: 78px;
+  }
 `;
 
 const NavList = styled.div`
@@ -99,7 +105,7 @@ const Icon = styled.div`
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [navBarColor, setNavBarColor] = useState(false);
-  const handleSideBa = () => {
+  const handleSideBar = () => {
     setShowMenu(!showMenu);
   };
   const closeMenu = () => {
@@ -140,10 +146,10 @@ const Navbar = () => {
           </NavLinks>
         </NavList>
         {!showMenu ? (
-          <MobileMenu onClick={() => handleSideBa()} />
+          <MobileMenu onClick={() => handleSideBar()} />
         ) : (
           <Icon>
-            <SideBarClose onClick={() => handleSideBa()} />
+            <SideBarClose onClick={() => handleSideBar()} />
             <SideBar clsoeMenu={closeMenu} />
           </Icon>
         )}
